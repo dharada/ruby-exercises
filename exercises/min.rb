@@ -13,17 +13,16 @@
 # This is going to be very similar to max, so don't be afraid if
 # these two methods look almost identical
 def min(list)
-  ____ = ____
-  ____.each do |____|
-    if ____
-      ____ = ____
-    end
+  return nil if list.nil?
+  min_temp = list.first
+  list.each do |each_item|
+    min_temp = each_item if each_item < min_temp
   end
 
-  return ____
+  return min_temp
 end
 
-if __FILE__ == $PROGRAM_NAME
+if $PROGRAM_NAME == __FILE__
   # "p" prints something to the screen in a way that's better for debugging
 
   p min([1, 2, 3]) == 1
@@ -34,6 +33,7 @@ if __FILE__ == $PROGRAM_NAME
   p min([-1]) == -1
   p min([11, 11, 11]) == 11
   p min([-22, -11, -22]) == -22
+  p min(nil) == nil
 end
 
 # Each of the lines above will print out "true" or "false"
